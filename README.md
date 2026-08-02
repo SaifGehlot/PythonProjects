@@ -35,11 +35,12 @@ The goal of this repository is to:
 
 ## 📂 Projects
 
-| #   | Project          | Description                      | Status       |
-| --- | ---------------- | -------------------------------- | ------------ |
-| 01  | Guess No.        | Short description of the project | ✅ Completed |
-| 02  | Quiz Game        | Short description of the project | ✅ Completed |
-| 03  | RockPaperScissor | Short description of the project | ✅ Completed |
+| #   | Project          | Description                                     | Status       |
+| --- | ---------------- | ----------------------------------------------- | ------------ |
+| 01  | Guess No.        | Guess A number between (0 to 10)                | ✅ Completed |
+| 02  | Quiz Game        | Answer the question and get points              | ✅ Completed |
+| 03  | RockPaperScissor | No need to explain                              | ✅ Completed |
+| 04  | Adventure Game   | Raigbait game will never win cause i made it ☠️ | ✅ Completed |
 
 > More projects will be added as I continue learning and building.
 
@@ -81,4 +82,5 @@ Build Better Projects
      ↓
 Become a Better Developer# PythonProjects
 ```
+
 # PythonProjects
