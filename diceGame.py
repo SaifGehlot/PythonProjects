@@ -46,10 +46,12 @@ def multiPlayer(userScore):
       playerScoresInArr = [0 for _ in range(playersCount)]
     
       if 2 <= playersCount <= 4:
+
         while max(playerScoresInArr) < maxScore:
           for playerIdx in range(playersCount):
             currentScore = 0     
-            print(f"Player {playerIdx + 1}, Turn just started!")
+            print(f"\n Player {playerIdx + 1}, Turn just started! \n")
+            print(f"Your total score is {playerScoresInArr[playerIdx]}")
           
             while True:
               userRoll = input("Would you like to roll press (y): ").lower()  
