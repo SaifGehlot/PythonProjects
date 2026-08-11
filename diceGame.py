@@ -81,13 +81,14 @@ def multiPlayer(userScore):
       print("Enter a integer value!")
 
 if chooseMode == 's':
-  # singlePlayer(userScore)
+  singlePlayer(userScore)
   pass
 elif chooseMode == 'm':
   multiPlayer(userScore)
 else:
   print('You Pressed Invalid Key')  
   
+
 
 
 
