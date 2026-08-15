@@ -17,17 +17,18 @@ setOfQuestions = [
 ]
 
 setOfAnswers = [
-    "Cristiano Ronaldo",
+    "cristiano ronaldo",
     "6 months",
-    "Spain",
+    "spain",
     "10 years",
-    "Argentina"
+    "argentina"
 ]
 
-randomQuestionSelector = random.randint(0, 4)
+randomQuestionSelector = random.randint(0, len(setOfQuestions))
 userInput = input(f"Here's Your Question: {setOfQuestions[randomQuestionSelector]}: ").lower()
 
 correctAnswer = setOfAnswers[randomQuestionSelector]
+
 if userInput == correctAnswer:
     print(f"{correctAnswer} is Correct")
 

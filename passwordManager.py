@@ -1,9 +1,9 @@
 from cryptography.fernet import Fernet
 
-# def generateKey():
-#   key = Fernet.generate_key()
-#   with open("keys.key", "wb") as keysFile:
-#     print(keysFile.write(key))
+def generateKey():
+  key = Fernet.generate_key()
+  with open("keys.key", "wb") as keysFile:
+    print(keysFile.write(key))
 
 def loadKey():
   file = open('keys.key', 'rb')
