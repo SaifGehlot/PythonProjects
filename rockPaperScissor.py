@@ -36,6 +36,9 @@ while True:
     print(roundWon)
     userScore += 1
 
+  elif userInput == computerPicks:
+    print(roundDraw)
+
   else:
     print(roundLoss)
     computerScore += 1
