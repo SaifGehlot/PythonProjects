@@ -22,4 +22,7 @@ for word in words:
   answer = input(f"Enter a word for {word}: ")
   answers[word] = answer
 
-print(answers)
+for word in words:
+  story = story.replace(word, answers[word])
+
+print(story)
