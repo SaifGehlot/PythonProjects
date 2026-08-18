@@ -1,94 +1,55 @@
 import random
-userScore = 0
-chooseMode = input("Press S to play in SinglePlayer Mode, Press M to play in MultiPlayer Mode: ").lower()
 
-def randomRoll():
-  minNumber = 1
-  maxNumber = 6
-  roll = random.randint(minNumber, maxNumber)
+def roll():
+  min_Value = 1
+  max_Value = 6
 
+  roll = random.randint(min_Value, max_Value)
   return roll
 
-def singlePlayer(userScore):
-  diceRollValue = randomRoll()
-  userStart = input("Press S to start the game or Press Q to quit the game: ").lower()
-  if userStart == 'q':
-    print("Game Over!")
-  elif userStart == 's':
-    while True:
-      enterToRoll = input("Enter to roll the dice: ")
-      print(diceRollValue)
+while True:
+  modeSelection = input("Enter the number of player (2 - 4): ")
 
-      if diceRollValue == 1:
-        userScore = 0
-        print(f"You rolled {diceRollValue}")
-        break
-      else:
-        userScore += diceRollValue
-        print(f"You Score is {userScore}")  
-
-      if enterToRoll == 'q':
-        break  
-
-      if userScore >= 50:
-        print("You Won!")
-        break
-  print(f"Your Final Score Is: {userScore}")
-
-def multiPlayer(userScore):
-  maxScore = 50
-
-  while True:
-    playersCount = input("Enter the number of players (2 - 4): ")
-
-    if playersCount.isdigit():
-      playersCount = int(playersCount)
-      playerScoresInArr = [0 for _ in range(playersCount)]
-    
-      if 2 <= playersCount <= 4:
-
-        while max(playerScoresInArr) < maxScore:
-          for playerIdx in range(playersCount):
-            currentScore = 0     
-            print(f"\n Player {playerIdx + 1}, Turn just started! \n")
-            print(f"Your total score is {playerScoresInArr[playerIdx]}")
-          
-            while True:
-              userRoll = input("Would you like to roll press (y): ").lower()  
-              diceRollValue = randomRoll()
-              print(f"You rolled: {diceRollValue}")
-          
-              if userRoll != 'y':
-                print("Your turns over!")
-                break
-          
-              if diceRollValue == 1:
-                currentScore = 0
-                print(f"Your turn done!, GG")
-                break
-          
-              else:
-                currentScore += diceRollValue
-                print("Your current score is: ", currentScore)
-        
-          playerScoresInArr[playerIdx] += currentScore
-          print(f"Your total score is: {playerScoresInArr[playerIdx]}")
-      else:
-        print("Enter the number between the given range!")
-        break
-
+  if modeSelection.isdigit():
+    modeSelection = int(modeSelection)
+    if 2 <= modeSelection <= 4:
+      break
     else:
-      print("Enter a integer value!")
+      print('Player must be between 2 to 4')
 
-if chooseMode == 's':
-  singlePlayer(userScore)
-  pass
-elif chooseMode == 'm':
-  multiPlayer(userScore)
-else:
-  print('You Pressed Invalid Key')  
-  
+  else:
+    print("Invalid value")
 
+player_scores = [0 for _ in range(modeSelection)]
+max_score = 50
 
+while max_score > max(player_scores):
+
+  for currentPlayer in range(modeSelection):
+    currentScore = 0
+    print(f"\nPlayer number {currentPlayer + 1} turn has just started!")
+    print(f"Your total score is: {player_scores[currentPlayer]}\n")
+
+    while True:
+      would_roll = input("Would you like to roll (y)? ")
+      if would_roll.lower() != 'y':
+        break
+
+      rollValue = roll()
+      if rollValue == 1:
+        print(f"You rolled a {rollValue}! turn done")
+        currentScore = 0
+        break
+      else:
+        currentScore += rollValue
+        print(f"Your rolled a: {rollValue}")
+
+      print(f"Your total score is: {currentScore}")
+
+    player_scores[currentPlayer] += currentScore
+    print("Your total score is:", player_scores[currentPlayer])
+
+winningPlayer = player_scores.index(max(currentScore))
+print(f"Player number {winningPlayer + 1} has won the game 🥳")
 
 

@@ -1,0 +1,5 @@
+One day, <name> went to the <place> with a <noun>.
+Suddenly, a <animal> wearing <clothing_item> appeared!
+“<exclamation>!” shouted <name>.
+The animal gave <name> a <noun>, and they ran <adverb> to the <place>.
+It was a very <adjective> day!
