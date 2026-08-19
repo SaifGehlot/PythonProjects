@@ -14,7 +14,7 @@ for i, char in enumerate(story):
   if char == targetEnd and startOfWord != None:
     word = story[startOfWord: i + 1]
     words.add(word)
-    startOfWord = -1
+    startOfWord = None
 
 answers = {}
 
