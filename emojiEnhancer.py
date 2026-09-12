@@ -12,7 +12,7 @@ updatedWord = []
 
 for word in userMessage.split():
   cleanedWord = word.strip(".,!?#$%^&*").lower()
-  emojiFound = emojiMapFun.get(cleanedWord, "")
+  emojiFound = emojiMapFun.get(cleanedWord, None)
 
   if emojiFound:
     updatedWord.append(f"{word} {emojiFound}")
