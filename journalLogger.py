@@ -1,8 +1,14 @@
 import datetime
 
-entry = input("What did you learn today? ").strip()
-rating = input("⭐️ Rate your productivity today (1-5, optional)" ).strip()
+userEntry = input("Enter what you've learned today?: ").strip()
+userRating = input("Enter your productivity rating? (1-5)⭐️: ").strip()
 
-now = datetime.datetime.now()
-dateStr = now.strftime("%Y-%m-%d - %I:%M %p")
-print(dateStr)
+currentDate = datetime.datetime.now()
+decodedCurrentDate = currentDate.strftime("%Y-%M-%d - %I:%M %p")
+
+fileEntry = f"🗓️ {decodedCurrentDate}\n{userEntry}\nProductivity Rating: {userRating} Stars"
+fileEntry += f"\n{'-' * 50}"
+
+with open("journalEntry", "a") as f:
+  f.write(fileEntry)
+
