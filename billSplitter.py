@@ -1,36 +1,16 @@
-# Bill splitter
+grpCount = int(input("How many people are there in the grp?: ").strip())
+userData = []
 
-print("\nWelcome to bill splitter\n")
+for user in range(grpCount):
+  individUserName = input(f"Enter the name of user #{user + 1}: ").strip()
+  userData.append(individUserName)
 
-def getFloat(prompt):
-  while True:
-    try:
-      return float(input(prompt))
-    except ValueError:
-      print("❌ Please enter a valid number.")
+overallBill = int(input("Enter the overall bill in numbers: ").strip())
+share = round(overallBill / len(userData), 2)
 
-
-grpCount = int(input("How many people are in the group: "))
-individualNames = []
-
-for i in range(grpCount):
-  name = input(f"Enter name of person {i + 1}: ")
-  individualNames.append(name)
-
-totalBill = getFloat("Enter your overall bill in number only: ")
-
-share = round(totalBill / grpCount, 2)
-
-print("-" * 20 + "\n")
-
-print(totalBill)
+print("\n" + "-" * 10 + " Here's Your Bill " + "-" * 10 + "\n")
+print(f"Total bill: {overallBill}")
 print(f"Each person owes: {share}")
 
-for name in individualNames:
-  print(f"{name}: {share}")
-
-print("\n" + "-" * 20)
-
-
-
-  
+for indivdUser in userData:
+  print(f"{indivdUser} owes {share} rupess")
