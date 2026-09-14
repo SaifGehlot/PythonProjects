@@ -1,4 +1,4 @@
-emojiMapFun = {
+emojisContainer = {
   "love": "❤️",
   "happy": "😀",
   "code": "💻",
@@ -7,18 +7,18 @@ emojiMapFun = {
   "food": "🌭"
 }
 
-userMessage = input("Enter your message here: ").strip().lower()
-updatedWord = []
+userMessage = input("Enter your message: ").strip()
+updateWords = []
 
 for word in userMessage.split():
-  cleanedWord = word.strip(".,!?#$%^&*").lower()
-  emojiFound = emojiMapFun.get(cleanedWord, None)
+  cleanedWord = word.strip("!@#$%^&*.,?").lower()
+  emojiFound = emojisContainer.get(cleanedWord, "")
 
   if emojiFound:
-    updatedWord.append(f"{word} {emojiFound}")
+    updateWords.append(f"{cleanedWord} {emojiFound}")
   else:
-    updatedWord.append(word)
+    updateWords.append(word)
 
-updatedMessage = " ".join(updatedWord)
-print("Enhanced Message: \n")
-print(updatedMessage)
+finalMessage = " ".join(updateWords)
+print("Here's is your enhanced message!")
+print(finalMessage)
