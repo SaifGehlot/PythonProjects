@@ -1,4 +1,4 @@
-## Bill splitter
+# Bill splitter
 
 print("\nWelcome to bill splitter\n")
 
@@ -31,29 +31,6 @@ for name in individualNames:
 
 print("\n" + "-" * 20)
 
-# Expense tracker
 
-def getExpenseFloat(prompt):
-  while True:
-    try:
-      return float(input(prompt))
-    except ValueError:
-      print("❌ Enter a valid number")
 
-print("\n" + "=" * 5 + " Expense Tracker " + "=" * 5 + "\n")
-
-countUsers = int(input("Enter how many people: "))
-print("\n")
-
-userData = dict()
-
-for i in range(countUsers):
-  userNameInput = input(f"Enter the user name #{i + 1}: ")
-  userExpenseInput = getExpenseFloat("Enter user expense: ")
-  userData = name = userNameInput, expense = userExpenseInput
-
-  print("\n")
-
-print("\n" + "-" * 25 + "\n")
-
-print(f"Total Expense: {userExpenseInput}")
+  
